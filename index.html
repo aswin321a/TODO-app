@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flow | Secure Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="authOverlay" class="auth-overlay">
+        <div class="auth-card">
+            <h2 id="authTitle">Welcome Back</h2>
+            <p id="authSubtitle">Please login to access your flow.</p>
+            <div id="authMsg" class="auth-message"></div>
+            
+            <form id="authForm">
+                <input type="email" id="authEmail" placeholder="Email Address" required>
+                <input type="password" id="authPass" placeholder="Password" required>
+                <button type="submit" id="authSubmit" class="btn-sleek-add" style="width: 100%; margin-top: 10px;">Login</button>
+            </form>
+            
+            <p class="auth-toggle">
+                <span id="toggleText">Don't have an account?</span> 
+                <a href="#" id="toggleAuth">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="grid-wrapper" id="mainDashboard" style="display: none;">
+        <header class="header">
+            <div class="header-left">
+                <h1>My Flow</h1>
+                <div class="location-picker">
+                    <input type="text" id="cityInput" placeholder="Change city...">
+                    <button id="searchCityBtn" class="btn-sleek-add">Update</button>
+                </div>
+            </div>
+            <div class="header-right">
+                <div id="weatherWidget" class="weather-badge"><span id="tempText">...</span></div>
+                <div class="theme-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <button id="logoutBtn" class="btn-link" style="color: var(--primary); font-weight: bold;">Logout</button>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="quote-mini-card">
+                    <p id="quoteText">"Inspiration loading..."</p>
+                    <small id="quoteAuthor"></small>
+                </div>
+                <button id="getQuoteBtn" class="nav-btn-sleek">✨ New Quote</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="task-card">
+                <div class="input-group-sleek">
+                    <input type="text" id="taskInput" placeholder="Add a task to your flow...">
+                    <button id="addTaskBtn" class="btn-sleek-add">Add</button>
+                </div>
+                <nav class="tabs-sleek">
+                    <button class="tab-btn active">All</button>
+                    <button class="tab-btn">Today</button>
+                    <button class="tab-btn">Done</button>
+                </nav>
+                <ul id="taskList"></ul>
+            </section>
+
+            <section class="task-card">
+                <div class="header-flex">
+                    <h3>Project Gallery</h3>
+                    <button id="refreshGallery" class="btn-sleek-add" style="padding: 5px 15px; font-size: 0.7rem;">🔄 Shuffle</button>
+                </div>
+                <div class="image-grid" id="imageGallery"></div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 My Flow Dashboard | Secure Session Active</p>
+        </footer>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <button class="modal-nav prev">❮</button>
+        <div class="modal-content-wrapper"><img id="modalImg" src=""><p id="modalCaption"></p></div>
+        <button class="modal-nav next">❯</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
